@@ -1,0 +1,5 @@
+Getting data from NCDC
+https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt
+
+Station ID information:
+US1COSU0006  39.6239 -106.1018 2951.7 CO SILVERTHORNE 2.1 WSW 
