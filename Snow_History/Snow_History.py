@@ -1,5 +1,5 @@
 ### LIBRARIES ###
-
+import pyppdf.patch_pyppeteer
 from bs4 import BeautifulSoup, SoupStrainer
 import requests
 from requests_html import HTMLSession
@@ -9,8 +9,11 @@ from time import sleep
 import os
 from os.path import basename, join
 from random import randint
+from urllib.request import Request, urlopen
 
 t0 = time.time()  ###<--- Starts timer to see how long code takes to run
+
+###DAILY SUMMARY
 
 # https://www.ncdc.noaa.gov/snow-and-ice/daily-snow/CO/snowfall/20200130
 
@@ -36,11 +39,30 @@ def url_building():
 url_building()
 print(url_list[:3])
 
+selectors_list = []
+for i in range(1,31):
+    selectors = 'daily-data > tbody > tr:nth-child(327) > td.day.d{}'.format(i)
+    selectors_list.append(selectors)
 
 
+def scraping():
+    for u in url_list:
+        print(u)
+        req = Request(u, headers={'User-Agent':'Mozilla/5.0'})
+        webpage = urlopen(req).read()
+        soup = BeautifulSoup(webpage, features = 'lxml')
+        for s in selectors_list:
+            print(s)
+            snow_data = soup.select(s)
+            print(snow_data)
+            sleep(5)
 
+scraping()
+    
+#daily-data > tbody > tr:nth-child(1) > td.day.d1.selected
 
+#daily-data > tbody > tr:nth-child(327) > td.day.d1
 
+//*[@id="daily-data"]/tbody/tr[327]/td[8]
 
-
-# daily-data > tbody > tr:nth-child(305) > td.day.d1
+//*[@id="daily-data"]/tbody/tr[327]/td[9]
