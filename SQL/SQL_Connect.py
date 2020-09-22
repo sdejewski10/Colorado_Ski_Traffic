@@ -4,7 +4,6 @@
 import sqlalchemy
 from sqlalchemy import create_engine
 import pandas as pd 
-import sqlite3
 import os
 import psycopg2
 
