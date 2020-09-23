@@ -1,4 +1,8 @@
-## Welcome to GitHub Pages
+## Colorado Ski Traffic Analysis 
+
+#### Objective:
+
+The primary objective of this project was to gain a better understanding of the processes and skills required to extract, transform, and visualize a large dataset using data engineering/science tools. The secondary objective was to determine whether there has been a significant increase in traffic traveling through the I-70 Corridor, specifically the Eisenhower Tunnel during Ski Season.
 
 You can use the [editor on GitHub](https://github.com/sdejewski10/Colorado_Ski_Traffic/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
